@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>CLASE 8 - TRABAJO PRACTICO</title>
+		<script src="js/funciones.js" type="text/javascript"></script>
+		<style type="text/css">
+			.input-cont{
+				margin-bottom:10px;
+				display:flex;
+				justify-content:space-between;
+			}
+
+			.input-btn{
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body onload="iniciar()">
+		<div id="container" style="width:500px; height:125px; margin:0 auto; padding:25px; border: 1px solid #000">
+			<div class="input-cont">
+				<label>Titulo: </label>
+				<input type="text" id="titulo" style="width:400px;"/>
+			</div>
+			<div class="input-cont">
+				<label>Descripcion: </label>
+				<textarea id="descripcion" style="width:400px;"></textarea>
+			</div>
+			<div class="input-cont">
+				<label>Imagen: </label>
+				<input type="text" id="imagen" placeholder="URL http://" style="width:400px;"/>
+			</div>
+			<div class="input-btn">
+				<input type="button" id="guardar" onclick="agregarPeliculas()" value="Agregar Pelicula"/>
+			</div>
+		</div>
+		<div style="width:550px; margin:0 auto;padding:0;padding-left:25px;padding-right:25px">
+			<button style="width:100%;" onclick="mostrarPelis()">Mostrar Todas las Peliculas</button>
+		</div>
+		<br><br><br>
+		<div id="pelis" style="display:none;justify-content:center;">
+			<table cellpadding="0" cellspacing="0" style="width:99%;border:1px solid #000">
+				<thead style="border-bottom:1px solid #000">
+					<tr style="border-bottom:1px solid #000">
+						<th style="padding:5px;text-align:center;width:10%;border-bottom:1px solid #000">
+							<input type="button" value="&darr;" onclick="ordenarPeliculasId(1)">&nbsp;&nbsp;Id&nbsp;&nbsp;<input type="button" value="&uarr;" onclick="ordenarPeliculasId(2)">
+						</th>
+						<th style="padding:5px;text-align:center;width:15%;border-bottom:1px solid #000">Imagen</th>
+						<th style="padding:5px;text-align:center;width:25%;border-bottom:1px solid #000">
+							<input type="button" value="&darr;" onclick="ordenarPeliculasTitulo(1)">&nbsp;&nbsp;Titulo&nbsp;&nbsp;<input type="button" value="&uarr;" onclick="ordenarPeliculasTitulo(2)">
+						</th>
+						<th style="padding:5px;text-align:center;width:50%;border-bottom:1px solid #000">Descripcion</th>
+					</tr>
+				</thead>
+				<tbody id="pelis-tbody">
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
